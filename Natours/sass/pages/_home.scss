@@ -14,11 +14,17 @@
     ),
     url("../img/nat-4.jpg");
 
-  transform: skewY(-5deg);
+  transform: skewY(-6deg);
 
   //NOTE:select first direct child
   & > * {
     // pull back the -7 degree from parent
-    transform: skew(0, 5deg);
+    transform: skew(0, 6deg);
   }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0 15rem 0;
+  margin-top: -11rem;
 }
