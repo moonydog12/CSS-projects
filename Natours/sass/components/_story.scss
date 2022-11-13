@@ -25,12 +25,19 @@
     background-color: $color-primary;
     float: left;
     position: relative;
+    overflow: hidden;
 
-    // 元素必須是 float 且具備寬高才能使用
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      /* NOTE: clip path */
+      clip-path: circle(50% at 50% 50%);
+      -webkit-clip-path: circle(50% at 50% 50%);
+
+      // 元素必須是 float 且具備寬高才能使用
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
