@@ -136,7 +136,10 @@
     background-color: var(--color-primary);
     transform: scaleY(0);
     // transform-origin: top;
-    transition: transform 0.4s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+
+    // setting for multi properties
+    transition: transform 0.4s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
   }
 
   &__item:hover::before,
@@ -145,7 +148,7 @@
     width: 100%;
   }
 
-  &__item:active::before{
+  &__item:active::before {
     background-color: var(--color-primary-light);
   }
 
@@ -180,4 +183,117 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+}
+
+// Gallery
+
+.gallery {
+  display: flex;
+
+  &__photo {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+// Hotel overview
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--color-primary);
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    display: flex;
+
+    // NOTE: powerful trick in flexbox, margin will be calculated.
+    // Element only occupy what it needs.
+    margin-right: auto;
+  }
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-location {
+    margin-right: 0.8rem;
+  }
+
+  &__rating {
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-left: 3rem;
+    padding: 0 2.24rem;
+    align-self: stretch;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__rating-average {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: -3px;
+  }
+
+  &__rating-count {
+    font-size: 0.8rem;
+  }
+}
+
+// Button inline
+
+.btn-inline {
+  border: 0;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColors;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.7s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+
+    // NOTE: infinite animation
+    animation: pulsate 1s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: (1);
+    box-shadow: none;
+  }
 }
