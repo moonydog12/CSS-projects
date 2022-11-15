@@ -32,6 +32,30 @@
 }
 
 .hotel-view {
-  height: 80rem;
   flex: 1;
+}
+
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  border-bottom: var(--line);
+}
+
+.description {
+  padding: 2.5rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  flex: 0 0 60%;
+  margin-right: 6.5rem;
+  background: var(--color-grey-light-1);
+}
+
+.user-reviews {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  // default setting of flexbox is stretch
+  align-items: center;
 }
