@@ -13,6 +13,12 @@
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: $bp-xs) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input {
     // input element didn't auto inherited from global document
     font-family: inherit;
@@ -117,11 +123,24 @@
   font-size: 1.4rem;
   list-style: none;
 
+  @media screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media screen and (max-width: $bp-medium) {
+        margin: 0;
+      }
+    }
+
+    @media screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
 
@@ -165,6 +184,17 @@
 
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media screen and (max-width: $bp-small) {
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -173,6 +203,13 @@
     height: 3rem;
     margin-right: 1rem;
     fill: currentColor;
+
+    @media screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 
@@ -182,6 +219,10 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 // Gallery
@@ -207,6 +248,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -244,16 +290,28 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
@@ -269,7 +327,6 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 0.7s;
-  
 
   & span {
     margin-left: 3px;
@@ -338,18 +395,19 @@
     height: 1rem;
     width: 1rem;
     margin-right: 0.7rem;
-
     // older browsers
-    // background-image: url(/img/SVG/chevron-thin-right.svg);
-    // background-size: cover;
-
+    background-image: url(/img/SVG/chevron-thin-right.svg);
+    background-size: cover;
     // New browsers - masks
-    // NOTE:
-    background-color: var(--color-primary);
-    mask-image: url(/img/SVG/chevron-thin-right.svg);
-    mask-size: cover;
-    -webkit-mask-image: url(/img/SVG/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
+    // NOTE: Feature query
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: var(--color-primary);
+      mask-image: url(/img/SVG/chevron-thin-right.svg);
+      mask-size: cover;
+      -webkit-mask-image: url(/img/SVG/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      background-image: none;
+    }
   }
 }
 
@@ -366,6 +424,7 @@
   }
 
   &__friends {
+    display: flex;
   }
 
   &__photo {
@@ -376,7 +435,7 @@
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -390,6 +449,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
@@ -443,5 +507,79 @@
     z-index: 1;
     // cancel the default line height setting
     line-height: 1;
+  }
+}
+
+// CTA section
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  @media screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
+
+  &__book {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  cursor: pointer;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:hover &__visible {
+    transform: translate(0, 100%);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
   }
 }
