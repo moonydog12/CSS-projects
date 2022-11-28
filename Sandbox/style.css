@@ -1,20 +1,14 @@
-.container {
-  background-color: #eee;
+/* .container {
+  background-color: #ddd;
   width: 1000px;
-  /* height: 90vh; */
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  /* grid-template-columns: repeat(3, 150px) 1fr; */
-  /* grid-template-columns: 50% 1fr 2fr; */
   grid-template-columns: repeat(3, 1fr);
-
-  /* row-gap:30px ;
-  column-gap: 50px; */
   gap: 20px;
-}
+} */
 
-.item {
+/* .item {
   padding: 20px;
   font-size: 30px;
   font-family: sans-serif;
@@ -23,14 +17,20 @@
 
 .item--1 {
   background-color: orange;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  z-index: 10;
 }
 
 .item--2 {
   background-color: greenyellow;
+  grid-column: 2 / -1;
 }
 
 .item--3 {
   background-color: violet;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
 }
 
 .item--4 {
@@ -39,7 +39,198 @@
 
 .item--5 {
   background-color: blue;
+  grid-area: 1 / 3 / 3 / 4;
 }
+
 .item--6 {
   background-color: brown;
+} */
+
+/* Challenge */
+/* Method 1 : Line number  */
+
+/* .challenge {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr) 200px;
+  grid-template-rows: 100px 200px 400px 100px;
+
+  margin: 30px auto;
+  width: 1000px;
+}
+
+.challenge > * {
+  background-color: lightblue;
+  padding: 20px;
+  color: #000;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+.header {
+  grid-column: 1 / -1;
+}
+
+.side-bar {
+  grid-column: 4 / 5;
+  grid-row: 2 / span 2;
+}
+
+.main-content {
+  grid-column: 1 / span 3;
+}
+
+.footer {
+  grid-column: 1 / -1;
+} */
+
+/* Method 2 : Define line names  */
+
+/* .challenge {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px [grid-end];
+  grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
+
+  margin: 30px auto;
+  width: 1000px;
+}
+
+.challenge > * {
+  background-color: tomato;
+  padding: 20px;
+  color: #000;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+.header {
+  grid-column: col-start 1 / grid-end;
+}
+
+.side-bar {
+  grid-column: col-end 3 / grid-end;
+  grid-row: box-start / main-end;
+}
+
+.main-content {
+  grid-column: col-start 1 / col-end 3;
+}
+
+.footer {
+  grid-column: col-start 1 / grid-end;
+} */
+
+/* Method 3 : Naming Grid Area */
+
+.challenge {
+  display: grid;
+  gap: 30px;
+  grid-template-areas:
+    "head head head head"
+    "box1 box2 box3 side"
+    "main main main side"
+    "foot foot foot foot";
+
+  grid-template-columns: repeat(3, 1fr) 200px;
+  grid-template-rows: 100px 200px 400px 100px;
+
+  margin: 30px auto;
+  width: 1000px;
+}
+
+.challenge > * {
+  background-color: lightblue;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.header {
+  grid-area: head;
+}
+
+.side-bar {
+  grid-area: side;
+}
+
+.small-box-1 {
+  grid-area: box1;
+}
+
+.small-box-2 {
+  grid-area: box2;
+}
+
+.small-box-3 {
+  grid-area: box3;
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: foot;
+}
+
+/* Implicit Grids vs explicit grids */
+.container {
+  background-color: #ddd;
+  display: grid;
+  gap: 20px;
+  /* Note: Define row and column beforehand, helpful for JavaScript asynchronous data fetching  */
+  grid-auto-flow: row dense;
+  grid-auto-rows: 80px;
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-template-rows: repeat(2, 150px); */
+  margin: 3px auto;
+  width: 1000px;
+
+  /* align grid items to grid areas */
+  /* default center/end/start*/
+  /* align-items: center;  */
+  /* justify-items: center; */
+
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 100px);
+  height: 1000px;
+
+  /* align grid tracks to grid container */
+  /* center/start/end/space-between/space-around/space-evenly */
+  justify-content: center;
+  align-content: center;
+}
+
+.item {
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 30px;
+  background: rgb(24, 24, 122);
+  transform: translate(0);
+  transition: all 0.3s;
+}
+
+.item:hover {
+  transform: translate(0, -0.8rem);
+}
+
+.item--4 {
+  background-color: crimson;
+  grid-row: 2 / span 3;
+  /* align-self: start;
+  justify-self: start; */
+}
+
+.item--6 {
+  background-color: aqua;
+  grid-row: 2 / span 2;
+}
+
+.item--7 {
+  background-color: cadetblue;
+  grid-column: 1 / -1;
 }
