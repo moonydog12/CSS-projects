@@ -8,10 +8,25 @@
 }
 
 .heading-2 {
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+
+  &--dark {
+    color: $color-grey-dark-1;
+  }
+
   @extend %heading;
 }
 
 .heading-3 {
+  color: $color-primary;
+  font-size: 1.6rem;
+  text-transform: uppercase;
   @extend %heading;
 }
 
@@ -26,4 +41,39 @@
   &--dark {
     color: $color-grey-dark-1;
   }
+}
+
+.btn {
+  background-color: $color-primary;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  color: #fff;
+  font-family: $font-display;
+  font-size: 1.5rem;
+  padding: 1.8rem 3rem;
+  text-transform: uppercase;
+  transition: all 0.7s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+// Utility class
+
+.mb-sm {
+  margin-bottom: 2rem;
+}
+
+.mb-md {
+  margin-bottom: 3rem;
+}
+
+.mb-lg {
+  margin-bottom: 4rem;
+}
+
+.mb-xl {
+  margin-bottom: 6rem;
 }
