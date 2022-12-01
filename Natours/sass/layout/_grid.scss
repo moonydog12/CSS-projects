@@ -3,7 +3,6 @@
   max-width: $grid-width;
   margin: 0 auto;
 
-  // NOTE:not operator
   // Select everything but last child
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
@@ -37,7 +36,6 @@
     }
   }
 
-  // NOTE:calc() operator
   .col-1-of-2 {
     width: calc((100% - #{$gutter-horizontal}) / 2);
   }

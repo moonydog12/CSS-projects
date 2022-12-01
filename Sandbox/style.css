@@ -180,7 +180,7 @@
   background-color: #ddd;
   display: grid;
   gap: 20px;
-  /* Note: Define row and column beforehand, helpful for JavaScript asynchronous data fetching  */
+  /* note: Define row and column beforehand, helpful for JavaScript asynchronous data fetching  */
   grid-auto-flow: row dense;
   grid-auto-rows: 80px;
   /* grid-template-columns: repeat(2, 1fr); */

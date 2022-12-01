@@ -1,4 +1,3 @@
-/* NOTE:pseudo class */
 .btn {
   &,
   &:link,
@@ -51,7 +50,7 @@
       background-color: $color-primary-dark;
     }
   }
-  /* NOTE:Pseudo element */
+
   &::after {
     content: "";
     display: inline-block;

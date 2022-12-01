@@ -3,11 +3,11 @@
   margin: 30px auto;
   background-color: #ddd;
   display: grid;
-  /* Note: minmax function */
+  /* note: minmax function */
   /* grid-template-columns: max-content 1fr 1fr min-content; */
   /* grid-template-rows: repeat(2, minmax(150px, min-content)); */
 
-  /* Note: Using auto-fill and auto-fit */
+  /* note: Using auto-fill and auto-fit */
   grid-template-rows: repeat(2, minmax(150px, min-content));
   grid-template-columns: repeat(auto-fill, 100px);
 

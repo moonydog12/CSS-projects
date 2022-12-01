@@ -11,9 +11,6 @@
   &__content {
     height: 100%;
     width: 100%;
-
-    // NOTE: object-fit
-    // element will fill all parent element but maintain ratio
     object-fit: cover;
   }
 }

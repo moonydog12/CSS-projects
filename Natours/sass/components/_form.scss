@@ -27,7 +27,6 @@
       border-bottom: 3px solid $color-primary-dark;
     }
 
-    // NOTE: invalid pseudo class
     &:focus:invalid {
       border-bottom: 3px solid $color-secondary-dark;
     }
@@ -46,7 +45,6 @@
     transition: all 0.7s;
   }
 
-  // NOTE:sibling selector
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;

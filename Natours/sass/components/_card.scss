@@ -1,7 +1,6 @@
 .card {
   // Functionality
 
-  // NOTE: perspective
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
@@ -72,8 +71,6 @@
     height: 23rem;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-
-    // NOTE: background-blend-mode
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
