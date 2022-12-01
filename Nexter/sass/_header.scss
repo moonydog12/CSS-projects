@@ -10,11 +10,19 @@
 
   display: grid;
   grid-column: full-start / col-end 6;
-  grid-template-columns: max-content;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   justify-content: center;
   padding: 6rem 8rem;
   row-gap: 1.6rem;
+
+  @media screen and (max-width: $bp-md) {
+    grid-column: 1 / -1;
+  }
+
+  @media screen and (max-width: $bp-sm) {
+    padding: 5rem;
+  }
 
   &__logo {
     height: 6rem;
@@ -43,15 +51,16 @@
   }
 
   &__seenon-logos {
-    align-self: center;
+    align-items: center;
     column-gap: 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
 
     img {
-      height: 2.5rem;
       filter: brightness(60%);
+      max-height: 2.5rem;
+      max-width: 100%;
     }
   }
 }

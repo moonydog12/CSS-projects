@@ -7,12 +7,25 @@
   padding: 3rem;
   row-gap: 2rem;
 
+  @media screen and (max-width: $bp-md) {
+    grid-column: 1 / -1;
+  }
+
   &__list {
     align-items: center;
     column-gap: 2rem;
     display: grid;
     grid-template-columns: min-content max-content;
     row-gap: 5vh;
+
+    @media screen and (max-width: $bp-md) {
+      // 把 realtors 圖片及段落排成一欄
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+
+    @media screen and (max-width: $bp-sm) {
+      grid-template-columns: min-content max-content;
+    }
   }
 
   &__img {
