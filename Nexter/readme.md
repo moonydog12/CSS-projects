@@ -1,7 +1,5 @@
 # Nexter
 
-[Nexter - live demo](https://moonydog12.github.io/Advanced-CSS-Sass/Nexter/)
-
 Udemy 線上課程 (Advanced CSS and Sass: Flexbox, Grid, Animations and More! by Jonas Schmedtmann) 中的第三份教材，使用 CSS Grid 進行排版布局
 
 ## Project Specification

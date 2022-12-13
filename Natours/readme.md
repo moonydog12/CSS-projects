@@ -4,8 +4,6 @@ Udemy 線上課程 (Advanced CSS and Sass: Flexbox, Grid, Animations and More! b
 
 參考這份專案時可以參考檔案分類架構，排版語法可以使用 flexbox / grid 進行改寫。
 
-[Natours - live demo](https://moonydog12.github.io/Advanced-CSS-Sass/Natours/)
-
 ## 語法筆記
 
 **選擇第一個子元素 :**

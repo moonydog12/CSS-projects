@@ -1,7 +1,5 @@
 # Trillo
 
-[Trillo - live demo](https://moonydog12.github.io/Advanced-CSS-Sass/Trillo/)
-
 Udemy 線上課程 (Advanced CSS and Sass: Flexbox, Grid, Animations and More! by Jonas Schmedtmann) 中的第二份教材，使用 flexbox 進行排版
 
 ## Project Specification
@@ -78,7 +76,7 @@ animation 語法是
 ```
 
 > 💡
-> 
+>
 > [MDN - animation](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
 
 **feature queries :**
@@ -94,4 +92,3 @@ animation 語法是
 > 💡
 >
 > [MDN - Using feature queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Conditional_Rules/Using_Feature_Queries)
-
